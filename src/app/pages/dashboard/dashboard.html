@@ -1,0 +1,150 @@
+<main class="app-layout">
+  @if (auth.user()) {
+    <aside class="sidebar" aria-label="Main navigation">
+      <div class="sidebar-brand">
+        <div class="brand-mark" aria-hidden="true">P</div>
+        <div>
+          <strong>Pyst</strong>
+          <span>Workspace</span>
+        </div>
+      </div>
+
+      <nav class="side-nav">
+        <a class="nav-item active" href="#" aria-current="page">
+          <span class="nav-icon dashboard-icon" aria-hidden="true"></span>
+          Dashboard
+        </a>
+        <a class="nav-item" href="#">
+          <span class="nav-icon earnings-icon" aria-hidden="true"></span>
+          Earnings
+        </a>
+        <a class="nav-item" href="#">
+          <span class="nav-icon subscriptions-icon" aria-hidden="true"></span>
+          Subscriptions
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <img
+          class="sidebar-avatar"
+          [src]="auth.user().picture"
+          width="40"
+          height="40"
+          alt="Profile photo"
+        />
+        <div>
+          <strong>{{ auth.user().name }}</strong>
+          <span>{{ auth.user().email }}</span>
+        </div>
+      </div>
+    </aside>
+
+    <section class="workspace">
+      <header class="navbar">
+        <div>
+          <p class="eyebrow">Dashboard</p>
+          <h1>Overview</h1>
+        </div>
+
+        <div class="nav-actions">
+          <div class="user-chip">
+            <img
+              [src]="auth.user().picture"
+              width="36"
+              height="36"
+              alt="Profile photo"
+            />
+            <span>{{ auth.user().name }}</span>
+          </div>
+
+          <button class="logout-button" type="button" (click)="auth.logout()">
+            Logout
+          </button>
+        </div>
+      </header>
+
+      <section class="hero-panel" aria-label="Account summary">
+        <div>
+          <p class="panel-kicker">Welcome back</p>
+          <h2>{{ auth.user().name }}</h2>
+          <p class="hero-copy">
+            Track earnings, manage subscriptions, and keep account activity visible from one workspace.
+          </p>
+        </div>
+
+        <div class="status-card">
+          <span class="status-dot" aria-hidden="true"></span>
+          <div>
+            <p>Session active</p>
+            <strong>Google account connected</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics-grid" aria-label="Dashboard metrics">
+        <article class="metric-card">
+          <p class="metric-label">Earnings</p>
+          <strong>$4,280</strong>
+          <span>Projected this month</span>
+        </article>
+
+        <article class="metric-card">
+          <p class="metric-label">Subscriptions</p>
+          <strong>128</strong>
+          <span>Active customer plans</span>
+        </article>
+
+        <article class="metric-card accent-card">
+          <p class="metric-label">Conversion</p>
+          <strong>7.4%</strong>
+          <span>Up from the previous period</span>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel earnings-panel">
+          <div class="section-heading">
+            <div>
+              <p class="panel-kicker">Earnings</p>
+              <h3>Revenue trend</h3>
+            </div>
+            <span>$12.8k total</span>
+          </div>
+
+          <div class="bar-chart" aria-hidden="true">
+            <span style="--bar-height: 44%"></span>
+            <span style="--bar-height: 68%"></span>
+            <span style="--bar-height: 52%"></span>
+            <span style="--bar-height: 82%"></span>
+            <span style="--bar-height: 74%"></span>
+            <span style="--bar-height: 92%"></span>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="section-heading">
+            <div>
+              <p class="panel-kicker">Subscriptions</p>
+              <h3>Plan mix</h3>
+            </div>
+          </div>
+
+          <div class="plan-list">
+            <div class="plan-row">
+              <span>Starter</span>
+              <strong>54%</strong>
+            </div>
+            <div class="plan-row">
+              <span>Professional</span>
+              <strong>32%</strong>
+            </div>
+            <div class="plan-row">
+              <span>Enterprise</span>
+              <strong>14%</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+    </section>
+  }
+</main>
