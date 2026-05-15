@@ -1,3 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+.calendar-panel {
+  margin-bottom: 20px;
+}
+
+.calendar-panel .fc {
+  color: #172033;
+  font-family: inherit;
+}
+
+.calendar-panel .fc .fc-toolbar {
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.calendar-panel .fc .fc-toolbar-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.calendar-panel .fc .fc-button {
+  border: 1px solid rgba(23, 32, 51, 0.12);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #172033;
+  box-shadow: none;
+  font-weight: 800;
+}
+
+.calendar-panel .fc .fc-button-primary:not(:disabled):hover,
+.calendar-panel .fc .fc-button-primary:not(:disabled).fc-button-active {
+  border-color: #1e7a6f;
+  background: #1e7a6f;
+  color: #ffffff;
+}
+
+.calendar-panel .fc .fc-daygrid-day.fc-day-today {
+  background: #fff8ee;
+}
+
+.calendar-panel .fc .fc-event {
+  border-color: #1e7a6f;
+  background: #1e7a6f;
+}
+
+.calendar-panel .fc .earning-event {
+  border-color: #0f67b1;
+  background: #0f67b1;
+}
+
+.calendar-panel .fc .diary-event {
+  border-color: #b65d12;
+  background: #b65d12;
+}

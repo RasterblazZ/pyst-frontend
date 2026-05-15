@@ -63,41 +63,27 @@
         </div>
       </header>
 
-      <section class="hero-panel" aria-label="Account summary">
-        <div>
-          <p class="panel-kicker">Welcome back</p>
-          <h2>{{ auth.user().name }}</h2>
-          <p class="hero-copy">
-            Track earnings, manage subscriptions, and keep account activity visible from one workspace.
-          </p>
-        </div>
-
-        <div class="status-card">
-          <span class="status-dot" aria-hidden="true"></span>
-          <div>
-            <p>Session active</p>
-            <strong>Google account connected</strong>
-          </div>
-        </div>
+      <section class="panel calendar-panel" aria-label="Calendar">
+        <full-calendar [options]="calendarOptions"></full-calendar>
       </section>
 
       <section class="metrics-grid" aria-label="Dashboard metrics">
         <article class="metric-card">
           <p class="metric-label">Earnings</p>
-          <strong>$4,280</strong>
-          <span>Projected this month</span>
+          <strong>${{ totalEarnings }}</strong>
+          <span>Collected this month</span>
         </article>
 
         <article class="metric-card">
           <p class="metric-label">Subscriptions</p>
-          <strong>128</strong>
-          <span>Active customer plans</span>
+          <strong>{{ subscriptionsCount }}</strong>
+          <span>Active subscriptions</span>
         </article>
 
         <article class="metric-card accent-card">
-          <p class="metric-label">Conversion</p>
-          <strong>7.4%</strong>
-          <span>Up from the previous period</span>
+          <p class="metric-label">Balance</p>
+          <strong>${{ balance }}</strong>
+          <span>Earnings minus subscriptions</span>
         </article>
       </section>
 
